@@ -3,15 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Demo library framework</title>
+    <title>AntonJS</title>
 
-    <script src="./dist/my-library.js"></script>
+    <script src="./dist/antonjs.js"></script>
   </head>
   <body>
     <script>
-      const { isPrimeNumber } = window.MyLibrary;
+      const { calculateImageIndex } = window.AntonJS;
 
-      console.log(isPrimeNumber);
+      const url = 'https://i.picsum.photos/id/886/200/300.jpg';
+
+      calculateImageIndex('/mocks/12x8.png');
+
+      // async function test() {
+      //   const imageUrl =
+      //     'https://cozyness-images.fra1.cdn.digitaloceanspaces.com/production/user-submited-artistic-photos/1590691994317-cozyness-w400IMG_20200527_200417_557.jpg';
+      //   const res = await fetch(imageUrl, {
+      //     mode: 'no-cors',
+      //   });
+
+      //   const blob = await res.blob();
+      //   const objectURL = URL.createObjectURL(blob);
+
+      //   window.open(objectURL);
+      //   const img = new Image();
+      //   img.src = objectURL;
+      //   document.querySelector('body').appendChild(img);
+      // }
+
+      // test();
     </script>
   </body>
 </html>
