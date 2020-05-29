@@ -5,7 +5,7 @@
  * Created Date: Thursday, May 28th 2020, 7:04:51 pm
  * Author: Georgian Stan (georgian.stan8@gmail.com)
  * -----
- * Last Modified: Friday, 29th May 2020 8:43:58 am
+ * Last Modified: Friday, 29th May 2020 5:20:19 pm
  * Modified By: Georgian Stan (georgian.stan8@gmail.com>)
  * ------------------------------------
  */
@@ -14,21 +14,18 @@
  * * Helpres
  */
 
-import { getPixelsIndexFromDiagonal } from './image-manipulation';
+import { getPixelsIndexFromDiagonal } from './image-operations';
 
 /**
  * * Types
  */
 import { ErrorMessages } from './@types';
-import { DiagonalOfTheImage } from './image-manipulation/@types';
+import { DiagonalOfTheImage } from './image-operations/@types';
 
-const getPixelIndex = (numToRound: number): number => {
-  //Each pixel is 4 units long: r,g,b,a
-  const remainder = numToRound % 4;
-  if (remainder == 0) return numToRound;
-  return numToRound + 4 - remainder;
-};
-
+/**
+ * * Get imageData
+ * @param imageUrl - url of the image
+ */
 const getImageData = (imageUrl: string): Promise<ImageData> => {
   return new Promise(async (resolve, reject) => {
     const canvas: HTMLCanvasElement = <HTMLCanvasElement>(
@@ -62,6 +59,10 @@ const getImageData = (imageUrl: string): Promise<ImageData> => {
   });
 };
 
+/**
+ * * Calculate the index of the image
+ * @param imageUrl *
+ */
 const calculateImageIndex = async (imageUrl: string) => {
   try {
     const imageData: ImageData = await getImageData(imageUrl);

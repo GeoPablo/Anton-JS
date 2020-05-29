@@ -4,4 +4,8 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/', '.git', '/dist/'],
   setupFiles: ['./setupJest.ts'],
   automock: false,
+  moduleNameMapper: {
+    '@src(.*)$': '<rootDir>src/$1',
+    '@mocks(.*)$': '<rootDir>mocks/$1',
+  },
 };
