@@ -5,33 +5,28 @@
  * Created Date: Thursday, May 28th 2020, 7:04:51 pm
  * Author: Georgian Stan (georgian.stan8@gmail.com)
  * -----
- * Last Modified: Friday, 29th May 2020 12:09:50 am
+ * Last Modified: Friday, 29th May 2020 8:43:58 am
  * Modified By: Georgian Stan (georgian.stan8@gmail.com>)
  * ------------------------------------
  */
 
 /**
+ * * Helpres
+ */
+
+import { getPixelsIndexFromDiagonal } from './image-manipulation';
+
+/**
  * * Types
  */
 import { ErrorMessages } from './@types';
+import { DiagonalOfTheImage } from './image-manipulation/@types';
 
 const getPixelIndex = (numToRound: number): number => {
   //Each pixel is 4 units long: r,g,b,a
   const remainder = numToRound % 4;
   if (remainder == 0) return numToRound;
   return numToRound + 4 - remainder;
-};
-
-const getPixelsIndexFromPrincipalDiagonal = (
-  imageData: ImageData,
-): number[] => {
-  const pixels: number[] = [];
-  for (let i = 0; i < imageData.height; i++) {
-    // const pixelIndex = getPixelIndex(i * imageData.width + i);
-    pixels.push(i * imageData.width + i);
-  }
-
-  return pixels;
 };
 
 const getImageData = (imageUrl: string): Promise<ImageData> => {
@@ -71,7 +66,7 @@ const calculateImageIndex = async (imageUrl: string) => {
   try {
     const imageData: ImageData = await getImageData(imageUrl);
     console.log(imageData);
-    console.log(getPixelsIndexFromPrincipalDiagonal(imageData));
+    console.log(getPixelsIndexFromDiagonal(DiagonalOfTheImage.TR, imageData));
   } catch (err) {
     throw new Error(ErrorMessages.IMAGE_UNREACHABLE + ' ' + imageUrl);
   }
