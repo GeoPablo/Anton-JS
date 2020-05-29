@@ -1,0 +1,23 @@
+[
+  {
+    "imageName": "12x8.png",
+    "TLPixelsIndex": [0, 13, 26, 39, 52, 65, 78, 91],
+    "TRPixelsIndex": [11, 22, 33, 44, 55, 66, 77, 88],
+    "BLPixelsIndex": [84, 73, 62, 51, 40, 29, 18, 7],
+    "BRPixelsIndex": [95, 82, 69, 56, 43, 30, 17, 4]
+  },
+  {
+    "imageName": "7x10.png",
+    "TLPixelsIndex": [0, 8, 16, 24, 32, 40, 48],
+    "TRPixelsIndex": [6, 12, 18, 24, 30, 36, 42],
+    "BLPixelsIndex": [63, 57, 51, 45, 39, 33, 27],
+    "BRPixelsIndex": [69, 61, 53, 45, 37, 29, 21]
+  },
+  {
+    "imageName": "5x5.png",
+    "TLPixelsIndex": [0, 6, 12, 18, 24],
+    "TRPixelsIndex": [4, 8, 12, 16, 20],
+    "BLPixelsIndex": [20, 16, 12, 8, 4],
+    "BRPixelsIndex": [24, 18, 12, 6, 0]
+  }
+]
