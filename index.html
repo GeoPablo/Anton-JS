@@ -5,33 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AntonJS</title>
 
+    <style>
+      body {
+        font-family: 'Lato', sans-serif;
+      }
+      section {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      section div {
+        position: relative;
+        margin: 15px;
+      }
+
+      section div img {
+        max-width: 400px;
+      }
+
+      section div span {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background-color: rgb(255, 0, 119);
+        border-radius: 100%;
+        color: #fff;
+        padding: 5px;
+      }
+    </style>
     <script src="./dist/antonjs.js"></script>
   </head>
   <body>
+    <section>
+      <!-- <div>
+        <img src="https://picsum.photos/200/300" alt="" />
+        <span>123</span>
+      </div>
+      <div>
+        <img src="https://picsum.photos/200/300" alt="" />
+        <span>123</span>
+      </div> -->
+    </section>
+
     <script>
       const { calculateImageIndex } = window.AntonJS;
 
-      const url = 'https://i.picsum.photos/id/886/200/300.jpg';
+      (async () => {
+        // const res = await fetch('/mocks/image-urls.json');
+        // const urlsList = await res.json();
 
-      calculateImageIndex('/mocks/5x5.png');
+        const urlsList = ['/mocks/shine.png'];
 
-      // async function test() {
-      //   const imageUrl =
-      //     'https://cozyness-images.fra1.cdn.digitaloceanspaces.com/production/user-submited-artistic-photos/1590691994317-cozyness-w400IMG_20200527_200417_557.jpg';
-      //   const res = await fetch(imageUrl, {
-      //     mode: 'no-cors',
-      //   });
+        urlsList.forEach(async (url) => {
+          const { imageIndex, color } = await calculateImageIndex(url);
 
-      //   const blob = await res.blob();
-      //   const objectURL = URL.createObjectURL(blob);
+          // if (imageIndex < 40 || imageIndex > 50) {
+          //   return;
+          // }
 
-      //   window.open(objectURL);
-      //   const img = new Image();
-      //   img.src = objectURL;
-      //   document.querySelector('body').appendChild(img);
-      // }
+          const div = document.createElement('div');
+          const img = document.createElement('img');
+          const span = document.createElement('span');
 
-      // test();
+          span.style.backgroundColor = `rgb(${color.r}, ${color.g}, ${color.b})`;
+
+          img.setAttribute('src', url);
+          span.innerHTML = imageIndex;
+
+          div.appendChild(img);
+          div.appendChild(span);
+
+          document.querySelector('section').appendChild(div);
+        });
+      })();
     </script>
   </body>
 </html>

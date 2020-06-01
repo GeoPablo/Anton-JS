@@ -5,7 +5,7 @@
  * Created Date: Friday, May 29th 2020, 8:05:07 am
  * Author: Georgian Stan (georgian.stan8@gmail.com)
  * -----
- * Last Modified: Friday, 29th May 2020 8:45:20 pm
+ * Last Modified: Friday, 29th May 2020 11:01:43 pm
  * Modified By: Georgian Stan (georgian.stan8@gmail.com>)
  * ------------------------------------
  */
@@ -13,9 +13,8 @@
 /**
  * * Dependencies
  */
-import Jimp from 'jimp';
 import { readFileSync } from 'fs';
-import { join } from 'path';
+
 /**
  * * Units to test
  */

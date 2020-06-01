@@ -2,12 +2,12 @@
  * File: index.ts
  * Project: antonjs
  * Version:0.0.1
- * Created Date: Thursday, May 28th 2020, 11:42:31 pm
+ * Created Date: Friday, May 29th 2020, 11:04:27 pm
  * Author: Georgian Stan (georgian.stan8@gmail.com)
  * -----
- * Last Modified: Monday, 1st June 2020 4:28:21 pm
+ * Last Modified: Friday, 29th May 2020 11:04:36 pm
  * Modified By: Georgian Stan (georgian.stan8@gmail.com>)
  * ------------------------------------
  */
-export * from './errors.enum';
-export * from './pixels-pickup-strategy.enum';
+
+export * from './hsl-values.interface';

@@ -53,6 +53,8 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "jimp": "^0.12.1"
+    "jimp": "^0.12.1",
+    "mongodb": "^3.5.8",
+    "node-fetch": "^2.6.0"
   }
 }

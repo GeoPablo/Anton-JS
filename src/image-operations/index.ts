@@ -5,7 +5,7 @@
  * Created Date: Friday, May 29th 2020, 7:43:40 am
  * Author: Georgian Stan (georgian.stan8@gmail.com)
  * -----
- * Last Modified: Friday, 29th May 2020 8:44:48 pm
+ * Last Modified: Monday, 1st June 2020 4:21:47 pm
  * Modified By: Georgian Stan (georgian.stan8@gmail.com>)
  * ------------------------------------
  */
@@ -148,6 +148,10 @@ const getVibrantRgba = (rgbaValues: PixelsRgbaValue): RgbaValue => {
 
   return output;
 };
+
+
+
+
 export {
   getPixelsIndexFromDiagonal,
   getRgbaForPixels,
