@@ -55,6 +55,6 @@
   "dependencies": {
     "jimp": "^0.12.1",
     "mongodb": "^3.5.8",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   }
 }
